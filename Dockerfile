@@ -9,6 +9,8 @@ RUN npm run build
 # /app/build <---- important stuff
 
 FROM nginx
+#
+EXPOSE 80
 # copy something from another phase
 COPY --from=builder /app/build /usr/share/nginx/html
 # default command of nginx is "start"
